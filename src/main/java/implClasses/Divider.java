@@ -46,7 +46,7 @@ public class Divider {
 
     }
 
-    public StringBuilder makeNumPartForDivider() {
+    public StringBuilder makeNumPartOfDivider() {
         StringBuilder numPart = new StringBuilder("+");
         String rowNumdersLength = String.valueOf(values.length);
         for (int i1 = 0; i1 < rowNumdersLength.length() + 2; i1++) {
@@ -59,7 +59,7 @@ public class Divider {
     public String makeFullStringfromDivider() {
         StringBuilder sbdiv = new StringBuilder();
         if (withRowNumbers) {
-            sbdiv = makeNumPartForDivider();
+            sbdiv = makeNumPartOfDivider();
         }
         return sbdiv.append(makeStringDivider()).toString();
     }
