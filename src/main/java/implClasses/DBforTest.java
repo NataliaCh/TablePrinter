@@ -1,5 +1,9 @@
 package implClasses;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  * Created by Наталия on 13.12.2015.
  */
@@ -39,5 +43,16 @@ public class DBforTest {
             }
         }
         return values;
+    }
+    public void makeFileForTest (String printTable) throws IOException {
+        try(FileWriter writer = new FileWriter("E:\\IdeaProjects\\TablePrinter\\dbfortest.txt", false))
+        {
+            writer.write(printTable);
+
+        }
+        catch(IOException ex){
+
+            System.out.println(ex.getMessage());
+        }
     }
 }

@@ -3,6 +3,7 @@ import implClasses.TableImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 
@@ -22,7 +23,7 @@ public final class TablePrinterTests {
     }
 
     @Test
-    public void tableWithHeadersAndRowNumbers() {
+    public void tableWithHeadersAndRowNumbers() throws IOException {
         String expectedString =
                         "+---+----------+-----+---------------+\n" +
                         "| # | Name     | Age | Address       |\n" +
@@ -42,6 +43,7 @@ public final class TablePrinterTests {
         TableImpl table = TableImpl.create(headersTest, valuesTest, true);
 
         testCase(expectedString, table);
+        db.makeFileForTest(table.toString());
     }
 
     @Test
